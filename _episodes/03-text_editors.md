@@ -3,7 +3,7 @@ title: "Text Editors"
 teaching: 105
 exercises: 15
 questions:
-- "Which editor is always present in a system?"
+- "How edit text files on Linux using the terminal?"
 objectives:
 - "Learn about the 3 most popular terminal-based text editors"
 keypoints:

@@ -3,11 +3,12 @@ title: "Basic Commands to learn"
 teaching: 45
 exercises: 15
 questions:
-- "Key question"
+- "Which are the most basic commands that I need to learn?"
 objectives:
-- "First objective."
+- "Learn the most basic commands in Unix/Linux"
 keypoints:
-- "First key point."
+- "Learning the basic commands allow you to create files and directories and move around the filesystem"
+- "Use *man* to search for arguments of command line tools"
 ---
 
 ## The top 10 basic commands to learn
