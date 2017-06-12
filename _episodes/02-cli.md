@@ -52,7 +52,7 @@ drwxrwxr-x.  2 gufranco users     32 May 30 12:07 folder2
 lrwxrwxrwx.  1 gufranco users      6 May 30 12:16 link0a -> file0a
 lrwxrwxrwx.  1 gufranco users     14 May 30 12:16 link2a -> folder2/file2a
 ~~~
-{: .output}
+{: .source}
 
 Those characters on the first column indicate the permissions. The first character will be "d" for directories, "l" for symbolic links and "-" for normal files. The next 3 characters are the permissions for "read", "write" and "execute" for the owner. The next 3 are for the group, and the final 3 are for others.
 The meaning of "execute" for a file indicates that the file could be a script or binary executable. For a directory it means that you can see its contents.
@@ -170,7 +170,26 @@ Regular expressions offers ways to specified text strings that could vary in sev
 
 ### More commands
 
-The 10 commands above, will give you enough tools to move files around and travel the directory tree. There are more commands summarized
+The 10 commands above, will give you enough tools to move files around and
+travel the directory tree.
+The GNU Core Utilities are the basic file, shell and text manipulation
+utilities of the GNU operating system.
+These are the core utilities which are expected to exist on every
+operating system.
+
+If you want to know about the whole set of coreutils execute:
+
+~~~
+info coreutils
+~~~
+{: .source}
+
+Each command has its own manual. You can access those manuals with
+
+~~~
+man <COMMAND>
+~~~
+{: .source}
 
 > ### Output of entire files
 >
