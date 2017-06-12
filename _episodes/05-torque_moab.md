@@ -83,8 +83,28 @@ The directives are very similat to the serial case
 
 | TORQUE directive	| Description |
 |:------------------|:------------|
-|#PBS -k o	| Keeps the job output|
 |#PBS -l nodes=1:ppn=16,walltime=00:30:00	| Indicates the job requires one node, using 16 processors per node, and 30 minutes of runtime. |
+
+### Job Arrays
+
+Job array is a way to submit many jobs that can be indexed. The jobs are
+independent between them but you can submit them with a single qsub
+
+~~~
+#!/bin/sh
+
+#PBS -N <name_${PBS_ARRAYID}
+#PBS -t <num_range>
+#PBS -l nodes=<number_of_nodes>:ppn=<PPN number>,walltime=<time_needed_by_job>
+#PBS -m ae
+#PBS -M <email_address>
+#PBS -q <queue_name>
+
+cd $PBS_O_WORKDIR
+# Enter the command here
+mpirun -np <PPN number> ./a.out
+~~~
+{: .source}
 
 ### Environment variables
 
