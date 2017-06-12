@@ -26,13 +26,29 @@ The following table lists the most common module command options
 
 | Command	| Description |
 |:--------|:------------|
-| module list	| Lists modules currently loaded in a user's environment. A module is considered loaded when its associated modulefile has been executed and the user's environment contains the changes from the modulefile. |
-| module avail | Lists all available modules on a system. |
-| module show	| Shows environment changes that will be made by loading a given module. |
-| module load	| Loads a module. |
+| module list	  | Lists modules currently loaded in a user's environment. |
+| module avail  | Lists all available modules on a system. |
+| module show	  | Shows environment changes that will be made by loading a given module. |
+| module load	  | Loads a module. |
 | module unload	| Unloads a module. |
-| module help	| Shows help for a module. |
-| module swap	| Swaps a currently loaded module for an unloaded module. |
+| module help	  | Shows help for a module. |
+| module swap	  | Swaps a currently loaded module for an unloaded module. |
+
+## Creating a private repository
+
+On day 3 we will show and example of how to create a private module.
+With private modules you or your research group can have control on the software
+of interest for the group.
+
+The basic procedure is to locate modules on a folder accessible by relevant users
+and add the variable `MODULEPATH` to your `.bashrc`
+
+MODULEPATH controls the path that the module command searches when looking for
+modulefiles.  
+Typically, it is set  to a  default  value by the bootstrap procedure.  
+MODULEPATH can be set using ’module use’ or by the module initialization
+script to search group or personal modulefile directories before  or  after
+the master modulefile directory.
 
 ## Modules on Spruce
 
