@@ -86,6 +86,8 @@ The directives are very similat to the serial case
 |#PBS -k o	| Keeps the job output|
 |#PBS -l nodes=1:ppn=16,walltime=00:30:00	| Indicates the job requires one node, using 16 processors per node, and 30 minutes of runtime. |
 
+### Environment variables
+
 We are using PBS_O_WORKDIR to change directory to the place where the job was submitted
 The following environment variables will be available to the batch job.
 
@@ -101,5 +103,53 @@ The following environment variables will be available to the batch job.
 |PBS_JOBNAME| the job name supplied by the user. |
 |PBS_NODEFILE| the name of the file contain the list of nodes assigned to the job (for parallel and cluster systems). |
 |PBS_QUEUE| the name of the queue from which the job is executed. |
+
+### Montioring jobs
+
+To monitor the status of a queued or running job, use the qstat command from Torque
+of showq from Moab.
+
+Useful qstat options include:
+
+| qstat option |	Description |
+|:-------------|:-------------|
+|-Q |show all queues available |
+|-u user_list	| Displays jobs for users listed in user_list |
+|-a	| Displays all jobs |
+|-r	| Displays running jobs |
+|-f	| Displays the full listing of jobs (returns excessive detail) |
+|-n	| Displays nodes allocated to jobs |
+
+Moab showq offers:
+
+| showq option |	Description |
+|:-------------|:-------------|
+| -b	| blocked jobs only |
+| -c	| details about recently completed jobs. |
+| -g	| grid job and system id's for all jobs. |
+| -i	| extended details about idle jobs. |
+| -l	| local/remote view. For use in a Grid environment, displays job usage of both local and remote compute resources.
+| -n	| normal showq output, but lists job names under JOBID |
+| -o	| jobs in the active queue in the order specified (uses format showq -o <specifiedOrder>). Valid options include REMAINING, REVERSEREMAINING, JOB, USER, STATE, and STARTTIME. The default is REMAINING. |
+| -p	| only jobs assigned to the specified partition. |
+| -r	| extended details about active (running) jobs.  |
+| -R	| only jobs which overlap the specified reservation. |
+| -u	| specified user's jobs. Use showq -u -v to display the full username if it is truncated in normal -u output. |
+| -v	| local and full resource manager job IDs as well as partitions. |
+| -w	| only jobs associated with the specified constraint. Valid constraints include user, group, acct, class, and qos. |
+
+### Deleting jobs
+
+With Torque you can use `qdel`. Moab uses `mjobctl -c`. For example:
+
+~~~
+qdel 1045
+~~~
+{: .source}
+
+~~~
+mjobctl -c 1045
+~~~
+{: .source}
 
 {% include links.md %}
