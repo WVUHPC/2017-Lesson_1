@@ -3,7 +3,7 @@ title: "Using Environmental Modules"
 teaching: 45
 exercises: 15
 questions:
-- "How to load modules to access software that I want to use for my research"
+- "How to load modules to access software that I want to use for my research?"
 objectives:
 - "Learn about *modules*, how to search, load and unload modules"
 keypoints:
